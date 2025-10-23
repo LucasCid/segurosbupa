@@ -352,7 +352,7 @@
 
           .menu-toggle {
             display: none;
-            font-size: 2.4rem;
+            font-size: 4rem;
             color: var(--primary-blue);
             cursor: pointer;
           }
@@ -890,4 +890,11 @@
     .footer-section:nth-child(2) {
         display: none;
     }
+
+    .menu-toggle {
+            /* display: none; */
+            font-size: 4rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+          }
 }
