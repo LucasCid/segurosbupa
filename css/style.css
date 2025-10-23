@@ -1,3 +1,138 @@
+.curtain-reveal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            pointer-events: none;
+        }
+        
+        .curtain-panel {
+            flex: 1;
+            width: 100%;
+            background: linear-gradient(90deg, #f7fafc 0%, #bee3f8 25%, #63b3ed 50%, #3182ce 75%, #2c5282 100%);
+            transform: translateY(-100%);
+            animation: curtainSlide 1.2s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+            box-shadow: 0 0 15px rgba(44, 82, 130, 0.1);
+        }
+        
+        .curtain-panel:nth-child(1) {
+            background: linear-gradient(90deg, #f7fafc 0%, #e2e8f0 100%);
+            animation-delay: 0s;
+        }
+        
+        .curtain-panel:nth-child(2) {
+            background: linear-gradient(90deg, #e2e8f0 0%, #bee3f8 100%);
+            animation-delay: 0.1s;
+        }
+        
+        .curtain-panel:nth-child(3) {
+            background: linear-gradient(90deg, #bee3f8 0%, #90cdf4 100%);
+            animation-delay: 0.2s;
+        }
+        
+        .curtain-panel:nth-child(4) {
+            background: linear-gradient(90deg, #90cdf4 0%, #63b3ed 100%);
+            animation-delay: 0.3s;
+        }
+        
+        .curtain-panel:nth-child(5) {
+            background: linear-gradient(90deg, #63b3ed 0%, #4299e1 100%);
+            animation-delay: 0.4s;
+        }
+        
+        .curtain-panel:nth-child(6) {
+            background: linear-gradient(90deg, #4299e1 0%, #3182ce 100%);
+            animation-delay: 0.5s;
+        }
+        
+        .curtain-panel:nth-child(7) {
+            background: linear-gradient(90deg, #3182ce 0%, #2c5282 100%);
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes curtainSlide {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0.9;
+            }
+            50% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100%);
+                opacity: 0.9;
+            }
+        }
+        
+        /* Efecto de brillo sutil */
+        .curtain-panel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            animation: shine 1.1s ease-in-out;
+        }
+        
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%);
+            }
+            50%, 100% {
+                transform: translateX(100%);
+            }
+        }
+        
+        /* Ocultar contenido durante la animación */
+        body.curtain-active #page-content {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+        }
+        
+        body:not(.curtain-active) #page-content {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.2s ease 0.4s, visibility 0.2s ease 0.4s;
+        }
+        
+        /* Para asegurar que el contenido no sea visible durante la animación */
+        body.curtain-active {
+            overflow: hidden;
+        }
+        
+        body.curtain-active .curtain-reveal {
+            pointer-events: auto;
+        }
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
           /* Google Font */
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
