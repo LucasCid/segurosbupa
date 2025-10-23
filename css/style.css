@@ -115,7 +115,11 @@
           
           
           
-          
+          i{
+            font-size: 1.2rem;
+            padding-right: 0.1rem;
+
+          }
           
           
           
@@ -314,12 +318,17 @@
           }
 
           .navbar a {
-            font-size: 1.6rem;
-            font-weight: 500;
+            font-size: 1.42rem;
+            /* font-weight: 500; */
+            font-weight: bold;
             color: var(--dark-gray);
             text-decoration: none;
             position: relative;
             transition: color 0.3s ease;
+
+            span{
+              font-weight: 500;
+            }
           }
 
           .navbar a:hover {
@@ -790,8 +799,9 @@
 
           .footer-section p,
           .footer-section a {
-            font-size: 1.4rem;
-            color: var(--medium-gray);
+            font-size: 1.5rem;
+            /* color: var(--medium-gray); */
+            color: rgb(179, 179, 179);
             text-decoration: none;
             line-height: 1.8;
           }
@@ -874,3 +884,10 @@
               font-size: 2.2rem;
             }
           }
+
+          /* Media query para pantallas menores a 800px */
+@media (max-width: 799px) {
+    .footer-section:nth-child(2) {
+        display: none;
+    }
+}
